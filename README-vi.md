@@ -32,6 +32,7 @@
 - [prepare_for_interview.md](prepare_for_interview.md): Gợi ý chuẩn bị phỏng vấn DevOps/SRE.
 - [faq.md](faq.md): Trả lời những câu hỏi thường gặp về cách sử dụng repo.
 - [coding/](coding): Bộ bài tập coding bổ trợ cho DevOps.
+- [docs/vi/phan-tich-cau-truc.md](docs/vi/phan-tich-cau-truc.md): Tổng quan cấu trúc thư mục và tệp quan trọng trong repo.
 
 ## Giấy phép
 
