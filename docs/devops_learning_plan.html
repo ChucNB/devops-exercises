@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lộ trình học DevOps 8 tuần</title>
+  <style>
+    :root {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #1f2933;
+      background-color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background-color: inherit;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #0f172a;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .overview p {
+      margin: 0.25rem 0;
+    }
+
+    .key-objectives {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .objective-card {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 1rem;
+      border-left: 4px solid #2563eb;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      padding: 0.85rem;
+      border: 1px solid #e2e8f0;
+      vertical-align: top;
+      background-color: #ffffff;
+    }
+
+    th {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      text-align: left;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+      margin: 0.5rem 0 0;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #bfdbfe;
+      color: #1e40af;
+      border-radius: 999px;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.75rem;
+      margin-right: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .resources ul {
+      column-count: 2;
+      column-gap: 1.5rem;
+    }
+
+    .resources li {
+      margin-bottom: 0.45rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      th {
+        position: sticky;
+        top: 0;
+      }
+
+      tr {
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 16px rgba(15, 23, 42, 0.1);
+        overflow: hidden;
+      }
+
+      td {
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #1e3a8a;
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Lộ trình học DevOps trong 8 tuần</h1>
+
+  <section class="overview">
+    <h2>Tổng quan</h2>
+    <p><span class="badge">Thời lượng</span> 8 tuần (4 ngày học/tuần + 1 buổi ôn tập nhẹ, mỗi buổi ~120 phút)</p>
+    <p><span class="badge">Phù hợp</span> Backend Java Developer muốn chuyển sang DevOps/SRE</p>
+    <p><span class="badge">Tài nguyên</span> Repository <code>devops-exercises</code> và dự án Java cá nhân</p>
+    <p><span class="badge">Phương pháp</span> Mỗi ngày 1 chủ đề chính + thực hành/ghi chú trong khung 2 giờ buổi tối</p>
+  </section>
+
+  <section>
+    <h2>Mục tiêu trọng tâm</h2>
+    <div class="key-objectives">
+      <div class="objective-card">
+        <h3>Nền tảng vận hành</h3>
+        <p>Làm chủ Linux, Git, networking, monitoring cơ bản.</p>
+      </div>
+      <div class="objective-card">
+        <h3>Tự động hoá & Container</h3>
+        <p>Triển khai Docker, CI/CD, scripting hỗ trợ dịch vụ Java.</p>
+      </div>
+      <div class="objective-card">
+        <h3>Hạ tầng & Cloud</h3>
+        <p>Hiểu AWS core services, Terraform và pipeline IaC.</p>
+      </div>
+      <div class="objective-card">
+        <h3>Độ tin cậy hệ thống</h3>
+        <p>Quan sát, quản lý sự cố, chuẩn bị phỏng vấn DevOps/SRE.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lịch học chi tiết</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tuần</th>
+          <th>Ngày</th>
+          <th>Chủ đề chính</th>
+          <th>Hoạt động cụ thể</th>
+          <th>Kết quả mong đợi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4" data-label="Tuần">1<br /><small>Nhập môn DevOps</small></td>
+          <td data-label="Ngày">Ngày 1</td>
+          <td data-label="Chủ đề">Định hướng repo</td>
+          <td data-label="Hoạt động">
+            <ul>
+              <li>
+                <strong>30'</strong>
+                Đọc
+                <a href="../README-vi.md" target="_blank" rel="noopener noreferrer"><code>README-vi.md</code></a>
+                và
+                <a href="vi/phan-tich-cau-truc.md" target="_blank" rel="noopener noreferrer"><code>docs/vi/phan-tich-cau-truc.md</code></a>
+                để nắm cấu trúc repo.
+              </li>
+              <li>
+                <strong>45'</strong>
+                Khảo sát thư mục
+                <a href="../topics" target="_blank" rel="noopener noreferrer"><code>topics/</code></a>,
+                <a href="../exercises" target="_blank" rel="noopener noreferrer"><code>exercises/</code></a>
+                và phác thảo mindmap cấu trúc.
+              </li>
+              <li><strong>45'</strong> Ghi lại mục tiêu cá nhân theo 3 mốc: kiến thức nền, kỹ năng thực chiến, sản phẩm showcase.</li>
+            </ul>
+          </td>
+          <td data-label="Kết quả">
+            <ul>
+              <li>Bảng tổng quan repo (mindmap hoặc ghi chú) với các chủ đề ưu tiên.</li>
+              <li>Danh sách mục tiêu/đầu ra mong đợi cho 8 tuần, chia thành tuần và kỹ năng.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Ngày">Ngày 2</td>
+          <td data-label="Chủ đề">DevOps Foundation</td>
+          <td data-label="Hoạt động">
+            <ul>
+              <li><strong>40'</strong> Trả lời 10&ndash;12 câu hỏi đầu trong <a href="../topics/devops/README.md" target="_blank" rel="noopener noreferrer"><code>topics/devops/README.md</code></a> (culture, CAMS, anti-pattern).</li>
+              <li><strong>40'</strong> Vẽ sơ đồ luồng từ code đến sản phẩm tại team hiện tại và đánh dấu 2 điểm nghẽn chính.</li>
+              <li><strong>40'</strong> Ghi chú thuật ngữ trọng tâm (DevOps loop, feedback, automation) với ví dụ tại dự án Java.</li>
+            </ul>
+          </td>
+          <td data-label="Kết quả">
+            <ul>
+              <li>Summary 1 trang về nguyên tắc DevOps và ví dụ áp dụng trong môi trường Java.</li>
+              <li>Danh sách 3 cơ hội cải thiện quy trình tại team.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Ngày">Ngày 3</td>
+          <td data-label="Chủ đề">Git thực chiến</td>
+          <td data-label="Hoạt động">
+            <ul>
+              <li><strong>35'</strong> Làm phần câu hỏi về branching, merging, rebasing trong <a href="../topics/git/README.md" target="_blank" rel="noopener noreferrer"><code>topics/git/README.md</code></a>.</li>
+              <li><strong>55'</strong> Tạo repo mẫu, thực hành nhánh feature, rebase tương tác, giải quyết xung đột.</li>
+              <li><strong>30'</strong> Ghi chú checklist Git chuẩn bị cho pipeline CI (commit message, review flow).</li>
+            </ul>
+          </td>
+          <td data-label="Kết quả">
+            <ul>
+              <li>Repo demo thể hiện kỹ thuật rebase/merge sạch sẽ.</li>
+              <li>Checklist Git chuẩn cho dự án nội bộ.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Ngày">Ngày 4</td>
+          <td data-label="Chủ đề">Linux cơ bản</td>
+          <td data-label="Hoạt động">
+            <ul>
+              <li><strong>45'</strong> Học mục <em>Filesystem</em>, <em>Permissions</em>, <em>Processes</em> trong <a href="../topics/linux/README.md" target="_blank" rel="noopener noreferrer"><code>topics/linux/README.md</code></a>.</li>
+              <li><strong>50'</strong> Thực hành trên terminal: quản lý file, phân quyền, kiểm tra tiến trình, sử dụng <code>man</code>.</li>
+              <li><strong>25'</strong> Tạo bảng ghi chú các lệnh quan trọng và shortcut hữu ích.</li>
+            </ul>
+          </td>
+          <td data-label="Kết quả">
+            <ul>
+              <li>Bảng cheat sheet Linux cơ bản cho vận hành ứng dụng Java.</li>
+              <li>Nắm được các thao tác quản trị file/quyền trên môi trường Linux.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">2<br /><small>Linux chuyên sâu</small></td>
+          <td>Ngày 5</td>
+          <td>Ôn tập + bài tập</td>
+          <td>
+            <ul>
+              <li><strong>35'</strong> Review ghi chú tuần 1, bổ sung ví dụ cụ thể còn thiếu.</li>
+              <li><strong>55'</strong> Làm nhóm câu hỏi <em>Basics</em> &amp; <em>Scripting</em> trong <a href="../topics/linux/README.md" target="_blank" rel="noopener noreferrer"><code>topics/linux/README.md</code></a>.</li>
+              <li><strong>30'</strong> Xây dựng bảng đánh giá tự thân: điểm mạnh/yếu, câu hỏi chưa trả lời tốt.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Bảng tổng hợp kiến thức Linux/Git/DevOps sau tuần 1.</li>
+              <li>Danh sách chủ đề cần đào sâu trong tuần 2.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 6</td>
+          <td>Shell scripting</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Hoàn thành phần câu hỏi shell, piping, redirection trong Linux.</li>
+              <li><strong>50'</strong> Viết script <code>deploy.sh</code> start/stop dịch vụ Java + ghi log.</li>
+              <li><strong>30'</strong> Thử nghiệm script với biến môi trường, tham số, kiểm tra lỗi exit code.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Script tự động hóa đã test hoạt động trên local.</li>
+              <li>Ghi chú best practice khi viết shell cho CI/CD.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 7</td>
+          <td>Networking căn bản</td>
+          <td>
+            <ul>
+              <li><strong>45'</strong> Đọc mục <em>Networking</em> &amp; <em>Troubleshooting</em> trong <a href="../topics/linux/README.md" target="_blank" rel="noopener noreferrer"><code>topics/linux/README.md</code></a>.</li>
+              <li><strong>45'</strong> Thực hành các lệnh <code>ss</code>, <code>netstat</code>, <code>tcpdump</code>, <code>dig</code> trong lab.</li>
+              <li><strong>30'</strong> Vẽ sơ đồ port/protocol cho ứng dụng Java + DB hiện tại.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Checklist chẩn đoán sự cố mạng cơ bản.</li>
+              <li>Sơ đồ kết nối ứng dụng Java phục vụ debug.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 8</td>
+          <td>Quan sát hệ thống</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Đọc <a href="../topics/monitoring/README.md" target="_blank" rel="noopener noreferrer"><code>topics/monitoring/README.md</code></a> (khái niệm metrics, logs, alerting).</li>
+              <li><strong>40'</strong> Xác định 5 metric &amp; 5 log quan trọng cho dịch vụ Java (availability, latency, error).</li>
+              <li><strong>40'</strong> Phác thảo bảng dashboard cơ bản (CPU, RAM, request, error rate).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Bảng yêu cầu quan sát (metrics/logs/alert) cho dịch vụ Java.</li>
+              <li>Danh sách tool có thể dùng (Prometheus, Grafana, Datadog, ELK).</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">3<br /><small>Containers</small></td>
+          <td>Ngày 9</td>
+          <td>Docker Fundamentals</td>
+          <td>
+            <ul>
+              <li><strong>35'</strong> Đọc phần giới thiệu Docker trong <a href="../topics/containers/README.md" target="_blank" rel="noopener noreferrer"><code>topics/containers/README.md</code></a>.</li>
+              <li><strong>50'</strong> Viết Dockerfile cho ứng dụng Java (multi-stage build, JVM options).</li>
+              <li><strong>35'</strong> Chạy <code>docker build</code> và kiểm thử container bằng postman/curl.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Dockerfile tối ưu kích thước và thời gian build.</li>
+              <li>Tài liệu note thông số run container (port, env, volumes).</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 10</td>
+          <td>Docker Compose</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Làm bài <a href="../exercises/docker/docker-debugging.md" target="_blank" rel="noopener noreferrer"><code>exercises/docker/docker-debugging.md</code></a> (phần khởi động &amp; lỗi cơ bản).</li>
+              <li><strong>45'</strong> Tạo file <code>docker-compose.yml</code> cho Java service + database + admin tool.</li>
+              <li><strong>35'</strong> Thiết lập healthcheck, volume persist và mạng bridge tùy chỉnh.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Môi trường compose hoàn chỉnh dùng được cho local dev.</li>
+              <li>Checklist xử lý sự cố container (log, exec, inspect).</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 11</td>
+          <td>Container networking &amp; storage</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Nghiên cứu mục network/volume trong <a href="../topics/containers/README.md" target="_blank" rel="noopener noreferrer"><code>topics/containers/README.md</code></a>.</li>
+              <li><strong>45'</strong> Thử bind mounts, named volumes, cấu hình overlay network.</li>
+              <li><strong>35'</strong> Viết tài liệu mô tả chiến lược lưu trữ dữ liệu và bảo mật secret (env file, vault).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Thiết lập mẫu cấu hình volume/secret áp dụng cho dự án.</li>
+              <li>Hiểu rõ cách container giao tiếp với nhau và với host.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 12</td>
+          <td>Ôn &amp; tổng kết</td>
+          <td>
+            <ul>
+              <li><strong>45'</strong> Tổng hợp kinh nghiệm container thành hướng dẫn build/run chi tiết.</li>
+              <li><strong>35'</strong> So sánh Docker với môi trường deploy hiện tại và đề xuất cải tiến.</li>
+              <li><strong>40'</strong> Lên backlog tính năng tiếp theo (ví dụ tự động hóa push image).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Tài liệu nội bộ về quy trình container hóa ứng dụng.</li>
+              <li>Danh sách hạng mục cần chuẩn bị trước khi tích hợp CI/CD.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">4<br /><small>CI/CD căn bản</small></td>
+          <td>Ngày 13</td>
+          <td>CI Concepts</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Đọc phần CI trong <a href="../topics/cicd/README.md" target="_blank" rel="noopener noreferrer"><code>topics/cicd/README.md</code></a> (build, test, feedback).</li>
+              <li><strong>40'</strong> Liệt kê step pipeline cho dự án Java: build, unit test, static check, package.</li>
+              <li><strong>40'</strong> Phân tích tool phù hợp (GitHub Actions, Jenkins) và yêu cầu hạ tầng.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Sơ đồ pipeline CI chi tiết kèm thời gian ước tính từng step.</li>
+              <li>Checklist pre-commit/test để giảm lỗi khi merge.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 14</td>
+          <td>CD &amp; Release</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Học phần CD, deployment strategies trong <a href="../topics/cicd/README.md" target="_blank" rel="noopener noreferrer"><code>topics/cicd/README.md</code></a>.</li>
+              <li><strong>40'</strong> So sánh blue/green, canary, rolling update cho dịch vụ Java.</li>
+              <li><strong>40'</strong> Thiết kế kịch bản rollback và checklist release an toàn.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Tài liệu mô tả chiến lược triển khai phù hợp với hệ thống hiện tại.</li>
+              <li>Runbook rollback với các bước cụ thể và người chịu trách nhiệm.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 15</td>
+          <td>Automation tools</td>
+          <td>
+            <ul>
+              <li><strong>35'</strong> Hoàn thành bài <em>My First Playbook</em> trong <a href="../topics/ansible/README.md" target="_blank" rel="noopener noreferrer"><code>topics/ansible/README.md</code></a>.</li>
+              <li><strong>50'</strong> Viết playbook cài đặt môi trường runtime cho ứng dụng Java (Java, config, service).</li>
+              <li><strong>35'</strong> Thử chạy playbook trên máy ảo hoặc container và ghi lại kết quả.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Playbook mẫu triển khai ứng dụng hoặc dependency.</li>
+              <li>Ghi chú kinh nghiệm tái sử dụng role/module Ansible.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 16</td>
+          <td>Ôn tập tuần</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Rà soát pipeline CI/CD đã thiết kế, bổ sung trigger, thông báo.</li>
+              <li><strong>40'</strong> Xây dựng backlog cải tiến (ưu tiên nhanh, trung hạn, dài hạn).</li>
+              <li><strong>40'</strong> Chuẩn bị demo ngắn giới thiệu pipeline và tool đã chọn.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Bộ đề xuất CI/CD hoàn chỉnh kèm kế hoạch triển khai từng giai đoạn.</li>
+              <li>Tài liệu trình bày phục vụ chia sẻ nội bộ/mentor.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">5<br /><small>Cloud cơ bản</small></td>
+          <td>Ngày 17</td>
+          <td>AWS Overview</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Đọc phần IAM, EC2, S3, Lambda trong <a href="../topics/aws/README.md" target="_blank" rel="noopener noreferrer"><code>topics/aws/README.md</code></a>.</li>
+              <li><strong>40'</strong> Lập bảng so sánh dịch vụ AWS với nhu cầu ứng dụng Java (compute, storage, queue).</li>
+              <li><strong>40'</strong> Xem qua pricing calculator để ước tính chi phí môi trường dev/staging.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Ghi chú tổng quan dịch vụ AWS quan trọng và use case tương ứng.</li>
+              <li>Bảng chi phí sơ bộ cho kiến trúc dự kiến.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 18</td>
+          <td>VPC &amp; Networking</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Nghiên cứu mục VPC, subnet, route table, security group.</li>
+              <li><strong>45'</strong> Vẽ sơ đồ kiến trúc mạng (public/private subnet, NAT, firewall) cho staging.</li>
+              <li><strong>35'</strong> Tạo checklist kiểm tra bảo mật mạng (port, CIDR, IAM policies liên quan).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Sơ đồ mạng hoàn chỉnh với ghi chú lưu lượng.</li>
+              <li>Checklist bảo mật mạng AWS cho dịch vụ.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 19</td>
+          <td>Hands-on dịch vụ</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Chọn 1 bài tập AWS trong repo (ví dụ tạo EC2) và giải bằng tay qua console.</li>
+              <li><strong>40'</strong> Ghi lại từng bước thao tác, output và lỗi gặp phải.</li>
+              <li><strong>40'</strong> Phác thảo kiến trúc nhỏ: EC2 + RDS + S3 cho ứng dụng Java.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Checklist thao tác AWS có minh họa ảnh/chụp màn hình.</li>
+              <li>Kiến trúc mẫu cho môi trường thử nghiệm.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 20</td>
+          <td>Ôn tập cloud</td>
+          <td>
+            <ul>
+              <li><strong>45'</strong> Tổng hợp kiến thức AWS đã học thành tài liệu 2 trang.</li>
+              <li><strong>35'</strong> Xác định rủi ro và câu hỏi còn hở để chuyển sang Terraform.</li>
+              <li><strong>40'</strong> Cập nhật backlog kỹ năng cần luyện thêm (IAM chi tiết, autoscaling, logging).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Tài liệu tóm tắt cloud + danh sách rủi ro/giả định.</li>
+              <li>Kế hoạch chuyển kiến thức cloud sang IaC tuần tới.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">6<br /><small>Infrastructure as Code</small></td>
+          <td>Ngày 21</td>
+          <td>Terraform Basics</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Đọc phần giới thiệu, workflow <code>init/plan/apply</code> trong <a href="../topics/terraform/README.md" target="_blank" rel="noopener noreferrer"><code>topics/terraform/README.md</code></a>.</li>
+              <li><strong>40'</strong> Cài đặt Terraform, tạo cấu hình local (provider <code>local</code>, resource file).</li>
+              <li><strong>40'</strong> Ghi chú về format HCL, biến đầu vào, output.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Project Terraform khởi tạo thành công với ví dụ đơn giản.</li>
+              <li>Note quy tắc viết HCL, cấu trúc thư mục chuẩn.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 22</td>
+          <td>State &amp; Modules</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Nghiên cứu quản lý state, backend, locking trong Terraform.</li>
+              <li><strong>45'</strong> Tạo module đơn giản dựng VPC hoặc EC2, áp dụng biến và output.</li>
+              <li><strong>35'</strong> Xem xét chiến lược lưu trữ state an toàn (S3 + DynamoDB, version control).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Module Terraform tái sử dụng được với README hướng dẫn.</li>
+              <li>Kế hoạch quản lý state &amp; bảo mật (ai truy cập, quy trình review).</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 23</td>
+          <td>IaC + Cloud</td>
+          <td>
+            <ul>
+              <li><strong>45'</strong> Giải một bài tập AWS bằng Terraform (ví dụ tạo EC2 + security group).</li>
+              <li><strong>35'</strong> Chạy <code>terraform plan</code>, <code>apply</code>, lưu lại output, thời gian thực hiện.</li>
+              <li><strong>40'</strong> So sánh IaC vs thao tác tay: ưu/nhược điểm, điểm cần lưu ý.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Thư mục Terraform đầy đủ (main.tf, variables.tf, outputs.tf, README).</li>
+              <li>Bảng so sánh manual vs IaC phục vụ thuyết phục team.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 24</td>
+          <td>Pipeline IaC</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Thiết kế pipeline chạy <code>terraform fmt</code>, <code>validate</code>, <code>plan</code> trước khi merge.</li>
+              <li><strong>40'</strong> Xác định chiến lược secret/credential cho pipeline (OIDC, vault, secrets manager).</li>
+              <li><strong>40'</strong> Viết hướng dẫn review code IaC (check list, yêu cầu evidence).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Blueprint pipeline IaC mô tả trigger, bước, người chịu trách nhiệm.</li>
+              <li>Checklist review Terraform chia sẻ cho team.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">7<br /><small>Observability &amp; Reliability</small></td>
+          <td>Ngày 25</td>
+          <td>Monitoring</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Đọc <a href="../topics/datadog/README.md" target="_blank" rel="noopener noreferrer"><code>topics/datadog/README.md</code></a> &amp; <a href="../topics/monitoring/README.md" target="_blank" rel="noopener noreferrer"><code>topics/monitoring/README.md</code></a>.</li>
+              <li><strong>40'</strong> Thiết kế dashboard metrics chính (availability, throughput, error budget).</li>
+              <li><strong>40'</strong> Định nghĩa alert threshold và kênh thông báo (Slack, PagerDuty) cho mỗi metric.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Tài liệu dashboard + alert mô tả mục đích và người sở hữu.</li>
+              <li>Danh sách metric ưu tiên và cách thu thập.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 26</td>
+          <td>Logging &amp; Tracing</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Ôn <a href="../topics/logging/README.md" target="_blank" rel="noopener noreferrer"><code>topics/logging/README.md</code></a> và tìm hiểu tracing cơ bản (OpenTelemetry).</li>
+              <li><strong>40'</strong> Xác định cấu trúc log chuẩn (JSON, correlation id) cho ứng dụng Java.</li>
+              <li><strong>40'</strong> Lên kế hoạch thu thập log/tracing (ELK, Jaeger, Datadog APM).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Spec log/tracing chuẩn áp dụng cho codebase.</li>
+              <li>Backlog tích hợp log/tracing vào pipeline.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 27</td>
+          <td>Chaos Engineering</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Học <a href="../topics/chaos_engineering/README.md" target="_blank" rel="noopener noreferrer"><code>topics/chaos_engineering/README.md</code></a> (nguyên tắc, quy trình thử nghiệm).</li>
+              <li><strong>40'</strong> Thiết kế 2 kịch bản giả lập sự cố (DB chậm, service timeout) và tiêu chí thành công.</li>
+              <li><strong>40'</strong> Xác định công cụ khả dụng (Gremlin, Litmus, tự viết script) và yêu cầu an toàn.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Plan chaos engineering gồm mục tiêu, phạm vi, checklist chuẩn bị.</li>
+              <li>Danh sách metric cần theo dõi khi chạy thí nghiệm.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 28</td>
+          <td>Runbook sự cố</td>
+          <td>
+            <ul>
+              <li><strong>45'</strong> Viết runbook xử lý downtime (triệu chứng, điều tra, khắc phục, hậu kiểm).</li>
+              <li><strong>35'</strong> Mô phỏng buổi postmortem nhanh với template 5 whys.</li>
+              <li><strong>40'</strong> Chuẩn hóa cách lưu trữ runbook (wiki, repo) và quy trình cập nhật.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Runbook hoàn chỉnh được review với đồng nghiệp/mentor.</li>
+              <li>Template postmortem tái sử dụng.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">8<br /><small>Tổng kết &amp; chuẩn bị phỏng vấn</small></td>
+          <td>Ngày 29</td>
+          <td>Ôn tập tổng hợp</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Đối chiếu tiến độ với <a href="../prepare_for_interview.md" target="_blank" rel="noopener noreferrer"><code>prepare_for_interview.md</code></a> và checklist kỹ năng.</li>
+              <li><strong>40'</strong> Tổng hợp lại toàn bộ ghi chú, highlight điểm mạnh/yếu theo từng chủ đề.</li>
+              <li><strong>40'</strong> Lên timeline hoàn thiện các hạng mục còn dang dở (script, tài liệu, demo).</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Bảng trạng thái kỹ năng với mức độ tự tin (1-5) từng mục.</li>
+              <li>Kế hoạch hoàn thiện phần còn thiếu trong 2 tuần tiếp theo.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 30</td>
+          <td>Thực hành phỏng vấn</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Chọn mỗi chủ đề 5 câu hỏi trong repo và trả lời bằng cách ghi âm/video.</li>
+              <li><strong>35'</strong> Nhờ đồng nghiệp/mentor review, ghi nhận phản hồi cải thiện storytelling.</li>
+              <li><strong>45'</strong> Chuẩn bị ví dụ STAR (Situation, Task, Action, Result) cho 3 trải nghiệm tiêu biểu.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Ngân hàng câu trả lời mẫu cho vòng phỏng vấn DevOps/SRE.</li>
+              <li>Danh sách feedback và hành động cải thiện.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 31</td>
+          <td>Dự án mini</td>
+          <td>
+            <ul>
+              <li><strong>45'</strong> Xây dựng repo demo tích hợp CI (test), Docker (build), Terraform (infrastructure).</li>
+              <li><strong>35'</strong> Viết README mô tả kiến trúc, workflow và cách chạy thử.</li>
+              <li><strong>40'</strong> Quay video ngắn (hoặc screenshot) trình diễn pipeline hoạt động.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Repo showcase hoàn chỉnh có thể chia sẻ khi phỏng vấn.</li>
+              <li>Tài liệu hướng dẫn giúp người khác chạy lại trong 15 phút.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày 32</td>
+          <td>Kế hoạch dài hạn</td>
+          <td>
+            <ul>
+              <li><strong>40'</strong> Xác định chủ đề nâng cao (Kubernetes, bảo mật, FinOps) và lý do cần học.</li>
+              <li><strong>40'</strong> Lập lịch học 3-6 tháng tiếp theo: khóa học, chứng chỉ, dự án cá nhân.</li>
+              <li><strong>40'</strong> Đánh giá lại mục tiêu nghề nghiệp và kỳ vọng chuyển vai trò DevOps/SRE.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Roadmap dài hạn (3-6 tháng) với mốc học tập và tiêu chí đo lường.</li>
+              <li>Bộ mục tiêu nghề nghiệp cập nhật phù hợp với định hướng mới.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </section>
+
+  <section class="resources">
+    <h2>Mẹo & tài nguyên bổ sung</h2>
+    <ul>
+      <li>Song song hoàn thiện ghi chú cá nhân bằng Notion/Obsidian để dễ review.</li>
+      <li>Dùng dự án Java của bạn làm “sân chơi” áp dụng từng chủ đề.</li>
+      <li>Chia sẻ tiến độ mỗi tuần với mentor hoặc đồng đội để nhận phản hồi.</li>
+      <li>Khi thiếu thời gian, ưu tiên chủ đề trực tiếp hỗ trợ pipeline hiện tại.</li>
+      <li>Có thể ghép học đôi với đồng nghiệp để luyện giải bài tập khó.</li>
+      <li>Tổng kết mỗi tuần bằng blog nội bộ hoặc retro nhỏ cho bản thân.</li>
+    </ul>
+  </section>
+</body>
+</html>
