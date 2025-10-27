@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tổng quan cấu trúc dự án DevOps Exercises</title>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      line-height: 1.55;
+      color: #1f2933;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 2.5rem;
+    }
+    h1, h2 {
+      margin-top: 0;
+      color: #0b7285;
+    }
+    p.intro {
+      max-width: 72rem;
+      margin-bottom: 1.8rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1.6rem;
+      margin: 0.35rem 0;
+      border-left: 1px solid #d0d5dd;
+    }
+    li {
+      margin: 0.32rem 0;
+      padding-left: 0.6rem;
+      position: relative;
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      left: -1.2rem;
+      top: 0.95rem;
+      width: 0.6rem;
+      height: 1px;
+      background: #d0d5dd;
+    }
+    .dir {
+      font-weight: 600;
+      color: #0b7285;
+    }
+    .file {
+      font-style: italic;
+      color: #364fc7;
+    }
+    .note {
+      color: #495057;
+    }
+    .badge {
+      display: inline-block;
+      background: #e7f5ff;
+      color: #1c7ed6;
+      font-size: 0.72rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.45rem;
+      margin-left: 0.45rem;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+    .highlight {
+      color: #d9480f;
+      font-weight: 600;
+    }
+    .section-title {
+      margin-top: 2.4rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 2px solid #d0ebff;
+      padding-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tổng quan &amp; cấu trúc thư mục DevOps Exercises</h1>
+  <p class="intro">
+    Kho tư liệu <strong>DevOps Exercises</strong> tập hợp hàng trăm câu hỏi, bài tập tình huống và ghi chú ôn luyện liên quan tới DevOps.
+    Sơ đồ dưới đây mô tả chi tiết từng thành phần trong repository, đi sâu vào từng thư mục và những tệp quan trọng ở mỗi tầng.
+  </p>
+
+  <h2 class="section-title">1. Thư mục gốc</h2>
+  <ul>
+    <li><span class="file">README.md</span> <span class="note">&ndash; Trang giới thiệu tổng quan bằng tiếng Anh, hướng dẫn cấu trúc và cách tham gia đóng góp.</span></li>
+    <li><span class="file">README-vi.md</span> <span class="note">&ndash; Bản dịch tiếng Việt của phần giới thiệu và hướng dẫn sử dụng.</span></li>
+    <li><span class="file">README-zh_CN.md</span> <span class="note">&ndash; Bản dịch tiếng Trung giản thể.</span></li>
+    <li><span class="file">CONTRIBUTING.md</span> <span class="note">&ndash; Quy trình gửi Pull Request, tiêu chuẩn nội dung và phong cách.</span></li>
+    <li><span class="file">LICENSE</span> <span class="note">&ndash; Giấy phép MIT áp dụng cho toàn bộ repository.</span></li>
+    <li><span class="file">credits.md</span> <span class="note">&ndash; Ghi nhận những cá nhân, tổ chức đóng góp.</span></li>
+    <li><span class="file">faq.md</span> <span class="note">&ndash; Tổng hợp câu hỏi thường gặp khi sử dụng bộ tài liệu.</span></li>
+    <li><span class="file">prepare_for_interview.md</span> <span class="note">&ndash; Danh sách kỹ năng và nguồn tham khảo để chuẩn bị phỏng vấn DevOps.</span></li>
+  </ul>
+
+  <h2 class="section-title">2. Thư mục chuyên đề và tài liệu</h2>
+  <ul>
+    <li><span class="dir">certificates/</span> <span class="note">&ndash; Bộ ghi chú ôn luyện chứng chỉ Cloud &amp; Kubernetes.</span>
+      <ul>
+        <li><span class="file">aws-certification-paths.md</span> <span class="note">&ndash; Sơ đồ tổng quan các chứng chỉ AWS và lộ trình đề xuất.</span></li>
+        <li><span class="file">aws-cloud-practitioner.md</span> <span class="note">&ndash; Tóm tắt kiến thức nền tảng AWS Cloud Practitioner theo từng chủ đề.</span></li>
+        <li><span class="file">aws-cloud-sysops-associate.md</span> <span class="note">&ndash; Checklist quản lý vận hành AWS (CloudWatch, Auto Scaling, cost, v.v.).</span></li>
+        <li><span class="file">aws-solutions-architect-associate.md</span> <span class="note">&ndash; Ghi chú thiết kế hệ thống, mạng và bảo mật cho chứng chỉ SAA-C03.</span></li>
+        <li><span class="file">azure-fundamentals-az-900.md</span> <span class="note">&ndash; Kiến thức cốt lõi về Azure, hạ tầng đám mây và định giá.</span></li>
+        <li><span class="file">cka.md</span> <span class="note">&ndash; Nội dung trọng tâm của chứng chỉ Certified Kubernetes Administrator.</span></li>
+        <li><span class="file">ckad.md</span> <span class="note">&ndash; Hướng dẫn ôn chứng chỉ Certified Kubernetes Application Developer.</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">coding/</span> <span class="note">&ndash; Bài tập thuật toán giúp luyện kỹ năng lập trình trong phỏng vấn.</span>
+      <ul>
+        <li><span class="dir">python/</span>
+          <ul>
+            <li><span class="file">binary_search.py</span> <span class="note">&ndash; Cài đặt tìm kiếm nhị phân, minh họa cách chia đôi dãy.</span></li>
+            <li><span class="file">merge_sort.py</span> <span class="note">&ndash; Thuật toán sắp xếp trộn với lời giải từng bước.</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="dir">docs/</span> <span class="note">&ndash; Tài liệu diễn giải cấu trúc dự án bằng tiếng Việt.</span>
+      <ul>
+        <li><span class="dir">vi/</span>
+          <ul>
+            <li><span class="file">huong-dan-bat-dau.md</span> <span class="note">&ndash; Lời giới thiệu, cách tìm chủ đề và phương pháp học hiệu quả.</span></li>
+            <li><span class="file">phan-tich-cau-truc.md</span> <span class="note">&ndash; Phân tích chi tiết từng thư mục tương tự tài liệu này.</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="dir">exercises/</span> <span class="note">&ndash; Bài tập thực hành có lời giải tham khảo.</span>
+      <ul>
+        <li><span class="dir">docker/</span>
+          <ul>
+            <li><span class="file">docker-debugging.md</span> <span class="note">&ndash; Tình huống xử lý lỗi container, yêu cầu đọc log và sửa Dockerfile.</span></li>
+          </ul>
+        </li>
+        <li><span class="dir">shell/</span>
+          <ul>
+            <li><span class="dir">solutions/</span>
+              <ul>
+                <li><span class="file">directories_comparison.md</span> <span class="note">&ndash; So sánh hai thư mục bằng shell script.</span></li>
+                <li><span class="file">directories_comparision.md</span> <span class="note">&ndash; Phiên bản chính tả khác, nội dung tương tự với các biến thể lệnh.</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="dir">images/</span> <span class="note">&ndash; Bộ hình minh họa cho các chủ đề kỹ thuật.</span>
+      <ul>
+        <li><span class="note">Gồm nhiều tệp PNG đơn lẻ (<span class="file">ansible.png</span>, <span class="file">aws.png</span>, <span class="file">terraform.png</span>, v.v.).</span></li>
+        <li><span class="dir">apps/</span> <span class="note">&ndash; Sơ đồ kiến trúc ứng dụng mẫu.</span></li>
+        <li><span class="dir">aws/</span> <span class="note">&ndash; Hình vẽ dịch vụ AWS, kiến trúc VPC, ALB, CI/CD.</span></li>
+        <li><span class="dir">kubernetes/</span> <span class="note">&ndash; Hình mô tả Pod, Service, Ingress và luồng triển khai.</span></li>
+        <li><span class="dir">sql/</span> <span class="note">&ndash; Sơ đồ quan hệ và câu lệnh SQL minh họa.</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">scripts/</span> <span class="note">&ndash; Công cụ hỗ trợ tự động hóa và chọn câu hỏi ngẫu nhiên.</span>
+      <ul>
+        <li><span class="file">count_questions.sh</span> <span class="note">&ndash; Đếm số câu hỏi trong các tệp Markdown.</span></li>
+        <li><span class="file">run_ci.sh</span> <span class="note">&ndash; Chạy kiểm thử và lint nội bộ.</span></li>
+        <li><span class="file">random_question.py</span> <span class="note">&ndash; Chọn câu hỏi DevOps ngẫu nhiên theo chủ đề.</span></li>
+        <li><span class="file">update_question_number.py</span> <span class="note">&ndash; Cập nhật lại số thứ tự câu hỏi khi thêm/xóa nội dung.</span></li>
+        <li><span class="file">question_utils.py</span> <span class="note">&ndash; Thư viện Python dùng chung cho các script xử lý câu hỏi.</span></li>
+        <li><span class="dir">"aws s3 event triggering"/</span> <span class="note">&ndash; Ví dụ cấu hình S3 kích hoạt Lambda.</span>
+          <ul>
+            <li><span class="file">README.md</span> <span class="note">&ndash; Hướng dẫn từng bước cấu hình.</span></li>
+            <li><span class="file">aws_s3_event_trigger.sh</span> <span class="note">&ndash; Script CLI tự động tạo S3 event.</span></li>
+            <li><span class="file">sample.png</span> <span class="note">&ndash; Ảnh minh họa luồng sự kiện.</span></li>
+            <li><span class="dir">s3-lambda/</span>
+              <ul>
+                <li><span class="file">requirements.txt</span> <span class="note">&ndash; Các thư viện Python cho hàm Lambda mẫu.</span></li>
+                <li><span class="file">s3-lambda.py</span> <span class="note">&ndash; Hàm Lambda xử lý file khi sự kiện S3 xảy ra.</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="dir">tests/</span> <span class="note">&ndash; Kiểm thử đảm bảo chất lượng nội dung.</span>
+      <ul>
+        <li><span class="file">scripts_question_utils_unittest.py</span> <span class="note">&ndash; Unit test cho các hàm trong <span class="file">question_utils.py</span>.</span></li>
+        <li><span class="file">syntax_checker_unittest.py</span> <span class="note">&ndash; Kiểm tra format Markdown và các quy ước câu hỏi.</span></li>
+        <li><span class="file">syntax_lint.py</span> <span class="note">&ndash; Trình lint sử dụng trong pipeline CI.</span></li>
+        <li><span class="dir">testcases/</span>
+          <ul>
+            <li><span class="file">testcase1.md</span>, <span class="file">testcase2.md</span>, <span class="file">testcase3.md</span> <span class="note">&ndash; Bộ dữ liệu mẫu cho kiểm thử.</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 class="section-title">3. Thư viện chủ đề DevOps (<span class="dir">topics/</span>)</h2>
+  <ul>
+    <li><span class="note">Mỗi thư mục con tương ứng với một mảng kiến thức. Hầu hết các chủ đề gồm <span class="file">README.md</span> (câu hỏi tổng hợp) và các bài tập/giải pháp chi tiết.</span></li>
+
+    <li><span class="dir">ansible/</span> <span class="badge">Lab</span>
+      <ul>
+        <li><span class="file">README.md</span> <span class="note">&ndash; Danh sách câu hỏi Ansible cơ bản &amp; nâng cao.</span></li>
+        <li><span class="file">my_first_task.md</span>, <span class="file">my_first_playbook.md</span>, <span class="file">update_upgrade_task.md</span> <span class="note">&ndash; Bài tập từng bước về module, playbook và cập nhật hệ thống.</span></li>
+        <li><span class="dir">solutions/</span> <span class="note">&ndash; Cung cấp đáp án tương ứng cho từng bài.</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">argo/</span> <span class="badge">GitOps</span>
+      <ul>
+        <li><span class="file">README.md</span> <span class="note">&ndash; Tổng quan Argo CD và các khái niệm chính.</span></li>
+        <li><span class="dir">exercises/</span>
+          <ul>
+            <li><span class="dir">app_creation/</span>, <span class="dir">argocd_helm_app/</span>, <span class="dir">blue_green_rollout/</span>, <span class="dir">canary_rollout/</span>, <span class="dir">secrets_101/</span>, <span class="dir">sync_app_cluster/</span>, <span class="dir">sync_app_git/</span>
+              <span class="note">&ndash; Mỗi thư mục chứa cặp <span class="file">exercise.md</span>/<span class="file">solution.md</span> mô tả kịch bản triển khai thực tế.</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="dir">aws/</span> <span class="badge">Cloud</span>
+      <ul>
+        <li><span class="file">README.md</span> <span class="note">&ndash; Bộ câu hỏi phỏng vấn AWS theo chủ đề dịch vụ.</span></li>
+        <li><span class="dir">exercises/</span> <span class="note">&ndash; Hơn 40 kịch bản triển khai &amp; khắc phục sự cố.</span>
+          <ul>
+            <li><span class="dir">access_advisor/</span>, <span class="dir">alb_multiple_target_groups/</span>, <span class="dir">app_load_balancer/</span>, <span class="dir">asg_dynamic_scaling_policy/</span>, <span class="dir">aurora_db/</span>, <span class="dir">auto_scaling_groups_basics/</span>
+              <span class="note">&ndash; Tập trung vào IAM, Elastic Load Balancing và Auto Scaling.</span></li>
+            <li><span class="dir">basic_s3_ci/</span>, <span class="dir">budget_setup/</span>, <span class="dir">create_ami/</span>, <span class="dir">create_efs/</span>, <span class="dir">efs_mount_target/</span>, <span class="dir">efs_static_site/</span>
+              <span class="note">&ndash; Xây dựng storage, tự động hóa sao lưu và quản lý chi phí.</span></li>
+            <li><span class="dir">eks_alb/</span>, <span class="dir">eks_blue_green_deployment/</span>, <span class="dir">eks_cluster_fargate/</span>
+              <span class="note">&ndash; Tình huống triển khai Kubernetes trên AWS.</span></li>
+            <li><span class="dir">iam_groups/</span>, <span class="dir">iam_policy_simulator/</span>, <span class="dir">organizations/</span>
+              <span class="note">&ndash; Quản trị tài khoản &amp; phân quyền.</span></li>
+            <li><span class="dir">rds_backup_restore/</span>, <span class="dir">rds_multi_az/</span>, <span class="dir">rds_read_replicas/</span>
+              <span class="note">&ndash; Khả năng chịu lỗi và khôi phục cơ sở dữ liệu.</span></li>
+            <li><span class="note">Mỗi thư mục đều có <span class="file">exercise.md</span> mô tả bài toán và <span class="file">solution.md</span> trình bày lời giải chi tiết.</span></li>
+          </ul>
+        </li>
+        <li><span class="dir">images/</span> <span class="note">&ndash; Sơ đồ AWS phục vụ giải thích bài tập.</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">azure/</span>
+      <ul>
+        <li><span class="file">README.md</span> <span class="note">&ndash; Danh sách câu hỏi Azure về identity, networking, storage.</span></li>
+        <li><span class="dir">exercises/</span> <span class="note">&ndash; Tập bài tập triển khai VM, App Service, thiết lập giám sát.</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">cicd/</span> <span class="badge">Pipeline</span>
+      <ul>
+        <li><span class="file">README.md</span> <span class="note">&ndash; Phỏng vấn về thiết kế pipeline CI/CD.</span></li>
+        <li><span class="file">ci_for_open_source_project.md</span>, <span class="file">deploy_to_kubernetes.md</span>, <span class="file">remove_builds.md</span>, <span class="file">remove_jobs.md</span> <span class="note">&ndash; Kịch bản thực tế khi tối ưu pipeline.</span></li>
+        <li><span class="dir">solutions/</span>
+          <ul>
+            <li><span class="file">Jenkinsfile</span>, <span class="file">playbook.yml</span>, <span class="file">script.groovy</span> <span class="note">&ndash; Lời giải tự động hóa và triển khai.</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="dir">containers/</span>
+      <ul>
+        <li><span class="file">README.md</span> <span class="note">&ndash; Bộ câu hỏi về container lifecycle, networking, storage.</span></li>
+        <li><span class="file">image_layers.md</span>, <span class="file">multi_stage_builds.md</span>, <span class="file">containerized_web_server.md</span>, <span class="file">containerized_db.md</span> <span class="note">&ndash; Bài viết phân tích cách thiết kế Dockerfile hiệu quả.</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">kubernetes/</span>
+      <ul>
+        <li><span class="file">README.md</span> <span class="note">&ndash; Câu hỏi theo nhóm chủ đề (Pods, Networking, Storage, Troubleshooting).</span></li>
+        <li><span class="dir">exercises/</span> <span class="note">&ndash; Bài thực hành như <span class="dir">cka_network_policies/</span>, <span class="dir">cka_storage/</span>, <span class="dir">pod_security_policy/</span> đi kèm hướng dẫn triển khai.</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">linux/</span>
+      <ul>
+        <li><span class="file">README.md</span> <span class="note">&ndash; Bộ câu hỏi về quản trị hệ thống, dịch vụ, quyền truy cập.</span></li>
+        <li><span class="dir">files/</span> <span class="note">&ndash; Ví dụ cấu hình và script dùng trong câu hỏi.</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">observability/</span>, <span class="dir">security/</span>, <span class="dir">sql/</span>, <span class="dir">terraform/</span>, <span class="dir">sre/</span>
+      <ul>
+        <li><span class="note">Mỗi thư mục chứa <span class="file">README.md</span> với bộ câu hỏi chuyên sâu và đôi khi có bài tập kèm lời giải (ví dụ: <span class="dir">terraform/modules/</span>, <span class="dir">security/exercises/</span>).</span></li>
+      </ul>
+    </li>
+
+    <li><span class="dir">soft_skills/</span> <span class="note">&ndash; Trao đổi về kỹ năng mềm, tình huống phỏng vấn hành vi.</span></li>
+    <li><span class="dir">cloud/</span>, <span class="dir">databases/</span>, <span class="dir">dns/</span>, <span class="dir">grafana/</span>, <span class="dir">programming/</span>, <span class="dir">python/</span> <span class="note">&ndash; Các thư mục nhỏ hơn chủ yếu gồm một tệp <span class="file">README.md</span> với danh sách câu hỏi trọng tâm.</span></li>
+    <li><span class="file">cloud_slack_bot.md</span>, <span class="file">eflk.md</span>, <span class="file">jenkins_pipelines.md</span>, <span class="file">jenkins_scripts.md</span>, <span class="file">pipeline_deploy_image_to_k8.md</span> <span class="note">&ndash; Chủ đề lẻ dạng hướng dẫn/ghi chú chuyên sâu.</span></li>
+    <li><span class="dir">flask_container_ci/</span>, <span class="dir">flask_container_ci2/</span> <span class="note">&ndash; Dự án ví dụ CI/CD với Flask, gồm Dockerfile, test và pipeline tham khảo.</span></li>
+  </ul>
+
+  <p class="intro highlight">Sử dụng trang này như bản đồ chi tiết để nhanh chóng khám phá các nguồn tài liệu học tập, luyện thi và thực hành DevOps trong repository.</p>
+</body>
+</html>
